@@ -611,7 +611,7 @@
 <script>
 // ── CONFIG ── update these two lines for a new Supabase project
 const SUPABASE_URL     = 'https://vbjduijcdvtvhfsplgvz.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_TN1LbrlevZZgctMIxAr0Hg__NobFrE8';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNwbWZnenZzZG1ia3J3ampob3ZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNTQyOTgsImV4cCI6MjA4ODgzMDI5OH0.1Uzsp9FEay4xFv6kEChtQtJYpFkZacGH_jYpKCCCMUE';
 const APPS_SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbxouco-i6oxgGPXF6ImVQCwKfGZkox6Ux-hnAf6D-siY1yU-KLi0jSjW9Wc-dr3wfrQ/exec';
 
 const STATUSES = [
@@ -695,17 +695,24 @@ function getWeekRange() {
 async function init() {
   updateClock(); updateWeekRange();
   setInterval(updateClock, 1000);
+
   const [divData, drvData] = await Promise.all([
-    supabaseFetch('GET','divisions'),
-    supabaseFetch('GET','drivers')
+    supabaseFetch('GET', 'divisions'),
+    supabaseFetch('GET', 'drivers')
   ]);
+
+  // Guard against empty response wiping the UI
+  if (!divData && !drvData) {
+    showToast('❌ Could not reach database — check connection', true);
+    return; // don't wipe existing state
+  }
+
   divisions = divData || [];
   drivers   = drvData || [];
   buildTabs();
   render();
   renderStats();
 }
-
 // ── TABS ──
 function buildTabs() {
   const container = document.getElementById('tabsWrap');
@@ -930,21 +937,41 @@ async function deleteDriver(driverId) {
 
 // ── SET STATUS — auto-exports on terminal status ──
 async function setStatus(driverId, newStatus) {
-  const drv = drivers.find(d=>d.id===driverId);
+  const drv = drivers.find(d => d.id === driverId);
   if (!drv) return;
-  drv.status = newStatus;
-  await supabaseFetch('PATCH','drivers',{id:`eq.${driverId}`},{status:newStatus});
 
-  if (TERMINAL_STATUSES.includes(newStatus)) {
-    await stampDivDate(drv.division_id);
-    autoExportDriver(drv);   // 🔄 fires immediately in background
-    render(); renderStats();
-    switchTab('stats');
-  } else {
-    await stampDivDate(drv.division_id);
+  const previousStatus = drv.status; // save rollback point
+
+  try {
+    drv.status = newStatus;
+    const result = await supabaseFetch('PATCH', 'drivers', {id: `eq.${driverId}`}, {status: newStatus});
+
+    if (result === null) {
+      // Supabase call failed — roll back local state
+      drv.status = previousStatus;
+      showToast('❌ Failed to update status — rolled back', true);
+      render();
+      return;
+    }
+
+    if (TERMINAL_STATUSES.includes(newStatus)) {
+      await stampDivDate(drv.division_id);
+      autoExportDriver(drv); // fire and forget — won't block render
+      render(); renderStats();
+      switchTab('stats');
+    } else {
+      await stampDivDate(drv.division_id);
+      render();
+    }
+    saveIndicator();
+
+  } catch (e) {
+    // Full rollback on any unexpected error
+    drv.status = previousStatus;
+    showToast('❌ Error updating status — rolled back', true);
+    console.error('setStatus error:', e);
     render();
   }
-  saveIndicator();
 }
 
 // ── AUTO EXPORT ON TERMINAL STATUS ──
