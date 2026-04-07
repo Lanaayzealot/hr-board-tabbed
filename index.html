@@ -18,11 +18,7 @@
       --muted: #8892a4;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: var(--bg);
@@ -32,11 +28,10 @@
       padding: 24px 20px 60px;
     }
 
-    /* Header */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       margin: -24px -20px 20px;
       padding: 24px 20px;
     }
@@ -49,11 +44,7 @@
       gap: 16px;
     }
 
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text);
-    }
+    header h1 { font-size: 28px; font-weight: 700; color: var(--text); }
 
     .header-subtitle {
       font-size: 14px;
@@ -90,12 +81,8 @@
       transition: all 0.15s;
     }
 
-    button.purge-btn:hover {
-      background: var(--accent-red);
-      color: #fff;
-    }
+    button.purge-btn:hover { background: var(--accent-red); color: #fff; }
 
-    /* Tabs */
     .tabs-wrap {
       max-width: 1400px;
       margin: 0 auto 20px;
@@ -103,7 +90,6 @@
       gap: 8px;
       flex-wrap: wrap;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0;
     }
 
     .tab-btn {
@@ -119,20 +105,10 @@
       white-space: nowrap;
     }
 
-    .tab-btn:hover {
-      color: var(--text);
-    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { border-bottom-color: var(--accent-blue); color: var(--text); }
 
-    .tab-btn.active {
-      border-bottom-color: var(--accent-blue);
-      color: var(--text);
-    }
-
-    /* Card Container */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+    .container { max-width: 1400px; margin: 0 auto; }
 
     .card {
       background: var(--surface);
@@ -140,14 +116,11 @@
       border-radius: 12px;
       overflow: hidden;
       display: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
-    .card.active {
-      display: block;
-    }
+    .card.active { display: block; }
 
-    /* Card Header */
     .card-header {
       display: flex;
       align-items: center;
@@ -159,21 +132,9 @@
       flex-wrap: wrap;
     }
 
-    .card-header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .card-icon {
-      font-size: 24px;
-    }
-
-    .card-title {
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-    }
+    .card-header-left { display: flex; align-items: center; gap: 12px; }
+    .card-icon { font-size: 24px; }
+    .card-title { font-weight: 700; font-size: 18px; color: var(--text); }
 
     .div-status {
       font-size: 12px;
@@ -188,29 +149,11 @@
       border: 2px solid;
     }
 
-    .div-status:active {
-      transform: scale(0.95);
-    }
+    .div-status:active { transform: scale(0.95); }
+    .div-status-hiring  { background:#fff; border-color:var(--accent-red);   color:var(--accent-red); }
+    .div-status-full    { background:#fff; border-color:var(--accent-green);  color:var(--accent-green); }
+    .div-status-urgent  { background:#fff; border-color:var(--accent-red);    color:var(--accent-red); }
 
-    .div-status-hiring {
-      background: #fff;
-      border-color: var(--accent-red);
-      color: var(--accent-red);
-    }
-
-    .div-status-full {
-      background: #fff;
-      border-color: var(--accent-green);
-      color: var(--accent-green);
-    }
-
-    .div-status-urgent {
-      background: #fff;
-      border-color: var(--accent-red);
-      color: var(--accent-red);
-    }
-
-    /* Progress Bar */
     .progress-bar-wrap {
       padding: 24px;
       border-bottom: 1px solid var(--border);
@@ -226,45 +169,13 @@
       gap: 16px;
     }
 
-    .progress-stats {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .stat-number {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--accent-blue);
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .stat-breakdown {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .stat-breakdown strong {
-      font-weight: 600;
-      color: var(--accent-blue);
-    }
-
-    .progress-bar-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .progress-stats { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; }
+    .stat-number { font-size: 28px; font-weight: 700; color: var(--accent-blue); }
+    .stat-label { font-size: 14px; color: var(--muted); }
+    .stat-breakdown { font-size: 14px; color: var(--muted); }
+    .stat-breakdown strong { font-weight: 600; color: var(--accent-blue); }
+    .progress-bar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
     button.action-btn {
       font-size: 12px;
@@ -280,10 +191,7 @@
       white-space: nowrap;
     }
 
-    button.action-btn:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
+    button.action-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
 
     .progress-percentage {
       font-size: 14px;
@@ -293,32 +201,17 @@
       margin-bottom: 8px;
     }
 
-    .progress-bar-track {
-      height: 8px;
-      background: #e8edf5;
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
+    .progress-bar-track { height: 8px; background: #e8edf5; border-radius: 99px; overflow: hidden; }
     .progress-bar-fill {
       height: 100%;
       background: var(--accent-blue);
       border-radius: 99px;
-      transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1);
     }
 
-    /* Slots Section */
-    .slots-section {
-      padding: 24px;
-    }
-
-    .slots-group {
-      margin-bottom: 32px;
-    }
-
-    .slots-group:last-child {
-      margin-bottom: 0;
-    }
+    .slots-section { padding: 24px; }
+    .slots-group { margin-bottom: 32px; }
+    .slots-group:last-child { margin-bottom: 0; }
 
     .slots-group-label {
       font-size: 12px;
@@ -330,21 +223,10 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .slots-group-label.oo {
-      color: var(--accent-blue);
-    }
+    .slots-group-label.oo { color: var(--accent-blue); }
+    .slots-group-label.cd { color: var(--accent-green); }
+    .slots-grid { display: flex; flex-direction: column; gap: 8px; }
 
-    .slots-group-label.cd {
-      color: var(--accent-green);
-    }
-
-    .slots-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    /* Driver Slot */
     .driver-slot {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -358,588 +240,261 @@
       animation: slotIn 0.2s ease;
     }
 
-    .driver-slot:hover {
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-    }
+    .driver-slot:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
 
     @keyframes slotIn {
-      from {
-        opacity: 0;
-        transform: scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity:0; transform:scale(0.96); }
+      to   { opacity:1; transform:scale(1); }
     }
 
-    .slot-name {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--text);
-      width: 120px;
-      flex-shrink: 0;
-    }
-
-    .slot-position {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      width: 80px;
-      flex-shrink: 0;
-    }
-
-    .slot-position.oo {
-      color: var(--accent-blue);
-    }
-
-    .slot-position.cd {
-      color: var(--accent-green);
-    }
+    .slot-name { font-weight:600; font-size:14px; color:var(--text); width:120px; flex-shrink:0; }
+    .slot-position { font-size:12px; font-weight:600; text-transform:uppercase; width:80px; flex-shrink:0; }
+    .slot-position.oo { color: var(--accent-blue); }
+    .slot-position.cd { color: var(--accent-green); }
 
     .slot-company {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 600;
-      width: 140px;
-      flex-shrink: 0;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 4px 8px;
-      border-radius: 4px;
+      font-size:12px; color:var(--muted); font-weight:600;
+      width:140px; flex-shrink:0;
+      border:none; background:transparent; cursor:pointer;
+      padding:4px 8px; border-radius:4px;
     }
-
-    .slot-company:hover {
-      color: var(--text);
-    }
+    .slot-company:hover { color: var(--text); }
 
     .slot-truck {
-      font-weight: 600;
-      font-size: 12px;
-      color: #555;
-      width: 80px;
-      flex-shrink: 0;
-      border: none;
-      background: transparent;
-      cursor: text;
-      padding: 4px 8px;
+      font-weight:600; font-size:12px; color:#555;
+      width:80px; flex-shrink:0;
+      border:none; background:transparent; cursor:text;
+      padding:4px 8px;
     }
 
     .slot-status {
-      font-size: 12px;
-      font-weight: 600;
-      width: 140px;
-      flex-shrink: 0;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 4px 8px;
+      font-size:12px; font-weight:600; width:160px; flex-shrink:0;
+      border:none; background:transparent; cursor:pointer;
+      padding:4px 8px;
     }
 
     .slot-notes {
-      font-size: 12px;
-      color: var(--muted);
-      flex: 1;
-      min-width: 150px;
-      border: none;
-      background: transparent;
-      padding: 4px 8px;
+      font-size:12px; color:var(--muted);
+      flex:1; min-width:150px;
+      border:none; background:transparent;
+      padding:4px 8px;
     }
 
     .slot-delete {
-      background: none;
-      border: none;
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 12px;
-      padding: 2px 5px;
-      opacity: 0;
-      transition: opacity 0.2s, color 0.2s;
+      background:none; border:none; color:var(--muted);
+      cursor:pointer; font-size:12px; padding:2px 5px;
+      opacity:0; transition:opacity 0.2s, color 0.2s;
     }
 
-    .driver-slot:hover .slot-delete {
-      opacity: 1;
-    }
+    .driver-slot:hover .slot-delete { opacity:1; }
+    .slot-delete:hover { color: var(--accent-red); }
 
-    .slot-delete:hover {
-      color: var(--accent-red);
-    }
-
-    /* Empty Slot */
     .slot-empty {
-      border: 1.5px dashed #d6dce8;
-      border-radius: 10px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      color: #b0bac9;
-      transition: all 0.2s;
-      font-size: 13px;
+      border:1.5px dashed #d6dce8; border-radius:10px;
+      padding:12px 16px; display:flex; align-items:center;
+      gap:8px; cursor:pointer; color:#b0bac9;
+      transition:all 0.2s; font-size:13px;
       animation: slotIn 0.2s ease;
     }
 
-    .slot-empty:hover {
-      border-color: var(--accent);
-      background: rgba(196, 154, 10, 0.03);
-      color: var(--accent);
-    }
+    .slot-empty:hover { border-color:var(--accent); background:rgba(196,154,10,0.03); color:var(--accent); }
 
     /* Stats Panel */
     .stats-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      display: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:12px; overflow:hidden; display:none;
+      box-shadow:0 2px 8px rgba(0,0,0,0.04);
     }
 
-    .stats-panel.active {
-      display: block;
-    }
+    .stats-panel.active { display:block; }
 
     .stats-header {
-      padding: 24px;
-      background: #f8f9fd;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      padding:24px; background:#f8f9fd;
+      border-bottom:1px solid var(--border);
+      display:flex; align-items:center;
+      justify-content:space-between; gap:16px; flex-wrap:wrap;
     }
 
-    .stats-title {
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .stats-week {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .stats-counters {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .stats-title { font-weight:700; font-size:18px; color:var(--text); }
+    .stats-week { font-size:12px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+    .stats-counters { display:flex; gap:12px; flex-wrap:wrap; }
 
     .stats-counter {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 20px;
+      display:flex; align-items:center; gap:6px;
+      font-size:12px; font-weight:700;
+      padding:6px 12px; border-radius:20px;
     }
 
-    .counter-hired {
-      background: #f0fdf6;
-      color: var(--accent-green);
-      border: 1px solid rgba(26, 170, 106, 0.2);
-    }
+    .counter-hired   { background:#f0fdf6; color:var(--accent-green); border:1px solid rgba(26,170,106,0.2); }
+    .counter-disq    { background:#fff5f5; color:var(--accent-red);   border:1px solid rgba(224,62,62,0.2); }
+    .counter-ghosted { background:#f3f4f6; color:#6b7280;             border:1px solid rgba(107,114,128,0.2); }
 
-    .counter-disq {
-      background: #fff5f5;
-      color: var(--accent-red);
-      border: 1px solid rgba(224, 62, 62, 0.2);
-    }
-
-    .counter-ghosted {
-      background: #f3f4f6;
-      color: #6b7280;
-      border: 1px solid rgba(107, 114, 128, 0.2);
-    }
-
-    .stats-body {
-      padding: 24px;
-    }
-
-    .stats-section {
-      margin-bottom: 24px;
-    }
-
-    .stats-section:last-child {
-      margin-bottom: 0;
-    }
+    .stats-body { padding:24px; }
+    .stats-section { margin-bottom:24px; }
+    .stats-section:last-child { margin-bottom:0; }
 
     .stats-section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding-bottom: 12px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid var(--border);
+      font-size:12px; font-weight:700; letter-spacing:1px;
+      text-transform:uppercase; padding-bottom:12px;
+      margin-bottom:12px; border-bottom:1px solid var(--border);
     }
 
-    .stats-section-label.hired {
-      color: var(--accent-green);
-    }
-
-    .stats-section-label.disq {
-      color: var(--accent-red);
-    }
-
-    .stats-section-label.ghosted {
-      color: #6b7280;
-    }
+    .stats-section-label.hired   { color: var(--accent-green); }
+    .stats-section-label.disq    { color: var(--accent-red); }
+    .stats-section-label.ghosted { color: #6b7280; }
 
     .stats-card {
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-      animation: slotIn 0.2s ease;
+      padding:12px; display:flex; align-items:center;
+      gap:12px; border-radius:8px; margin-bottom:8px;
+      flex-wrap:wrap; animation:slotIn 0.2s ease;
     }
 
-    .stats-card-hired {
-      background: #f0fdf6;
-      border: 1px solid rgba(26, 170, 106, 0.15);
-    }
+    .stats-card-hired   { background:#f0fdf6; border:1px solid rgba(26,170,106,0.15); }
+    .stats-card-disq    { background:#fff5f5; border:1px solid rgba(224,62,62,0.15); }
+    .stats-card-ghosted { background:#f3f4f6; border:1px solid rgba(107,114,128,0.15); }
 
-    .stats-card-disq {
-      background: #fff5f5;
-      border: 1px solid rgba(224, 62, 62, 0.15);
-    }
-
-    .stats-card-ghosted {
-      background: #f3f4f6;
-      border: 1px solid rgba(107, 114, 128, 0.15);
-    }
-
-    .stats-card-name {
-      font-weight: 600;
-      font-size: 13px;
-      color: var(--text);
-      width: 120px;
-      flex-shrink: 0;
-    }
-
-    .stats-card-div {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      width: 80px;
-      flex-shrink: 0;
-    }
-
-    .stats-card-div-hired {
-      color: var(--accent-green);
-    }
-
-    .stats-card-div-disq {
-      color: var(--accent-red);
-    }
-
-    .stats-card-div-ghosted {
-      color: #6b7280;
-    }
-
-    .stats-card-meta {
-      font-size: 12px;
-      color: var(--muted);
-      flex: 1;
-      min-width: 100px;
-    }
-
-    .stats-card-date {
-      font-size: 11px;
-      color: var(--muted);
-      font-style: italic;
-      white-space: nowrap;
-    }
+    .stats-card-name { font-weight:600; font-size:13px; color:var(--text); width:120px; flex-shrink:0; }
+    .stats-card-div  { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; width:80px; flex-shrink:0; }
+    .stats-card-div-hired   { color: var(--accent-green); }
+    .stats-card-div-disq    { color: var(--accent-red); }
+    .stats-card-div-ghosted { color: #6b7280; }
+    .stats-card-meta { font-size:12px; color:var(--muted); flex:1; min-width:100px; }
+    .stats-card-date { font-size:11px; color:var(--muted); font-style:italic; white-space:nowrap; }
 
     .stats-card-badge {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 10px;
-      white-space: nowrap;
+      font-size:11px; font-weight:700;
+      padding:3px 8px; border-radius:10px; white-space:nowrap;
     }
 
-    .badge-hired {
-      background: rgba(26, 170, 106, 0.12);
-      color: var(--accent-green);
-    }
+    .badge-hired   { background:rgba(26,170,106,0.12); color:var(--accent-green); }
+    .badge-disq    { background:rgba(224,62,62,0.12);  color:var(--accent-red); }
+    .badge-ghosted { background:rgba(107,114,128,0.12); color:#6b7280; }
 
-    .badge-disq {
-      background: rgba(224, 62, 62, 0.12);
-      color: var(--accent-red);
-    }
-
-    .badge-ghosted {
-      background: rgba(107, 114, 128, 0.12);
-      color: #6b7280;
-    }
-
-    .stats-empty {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      padding: 48px 0;
-    }
+    .stats-empty { text-align:center; color:var(--muted); font-size:14px; padding:48px 0; }
 
     .stats-footer {
-      padding: 16px 24px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
+      padding:16px 24px; display:flex; justify-content:flex-end;
+      gap:10px; border-top:1px solid var(--border); flex-wrap:wrap;
     }
 
     button.export-btn {
-      font-size: 12px;
-      color: var(--accent-blue);
-      cursor: pointer;
-      background: none;
-      border: 1px solid var(--accent-blue);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      transition: all 0.15s;
+      font-size:12px; color:var(--accent-blue); cursor:pointer;
+      background:none; border:1px solid var(--accent-blue);
+      padding:6px 12px; border-radius:6px;
+      font-family:'Inter', sans-serif; font-weight:600; transition:all 0.15s;
     }
 
-    button.export-btn:hover {
-      background: var(--accent-blue);
-      color: #fff;
-    }
+    button.export-btn:hover { background:var(--accent-blue); color:#fff; }
+    button.export-btn:disabled { opacity:0.6; cursor:not-allowed; }
 
     button.clear-btn {
-      font-size: 12px;
-      color: var(--muted);
-      cursor: pointer;
-      background: none;
-      border: 1px dashed var(--border);
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      transition: all 0.15s;
+      font-size:12px; color:var(--muted); cursor:pointer;
+      background:none; border:1px dashed var(--border);
+      padding:5px 10px; border-radius:6px;
+      font-family:'Inter', sans-serif; font-weight:600; transition:all 0.15s;
     }
 
-    button.clear-btn:hover {
-      border-color: var(--accent-red);
-      color: var(--accent-red);
-    }
+    button.clear-btn:hover { border-color:var(--accent-red); color:var(--accent-red); }
 
     /* Modals */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,0.35); z-index:1000;
+      align-items:center; justify-content:center; padding:20px;
     }
 
-    .modal-overlay.open {
-      display: flex;
-    }
+    .modal-overlay.open { display:flex; }
 
     .modal {
-      background: var(--surface);
-      border-radius: 12px;
-      padding: 28px;
-      width: min(480px, 100%);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-      animation: modalIn 0.2s ease;
+      background:var(--surface); border-radius:12px; padding:28px;
+      width:min(480px,100%);
+      box-shadow:0 20px 60px rgba(0,0,0,0.18);
+      animation:modalIn 0.2s ease;
     }
 
     .slots-modal {
-      background: var(--surface);
-      border-radius: 12px;
-      padding: 24px;
-      width: min(340px, 100%);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-      animation: modalIn 0.2s ease;
+      background:var(--surface); border-radius:12px; padding:24px;
+      width:min(340px,100%);
+      box-shadow:0 20px 60px rgba(0,0,0,0.18);
+      animation:modalIn 0.2s ease;
     }
 
     @keyframes modalIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95) translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
+      from { opacity:0; transform:scale(0.95) translateY(10px); }
+      to   { opacity:1; transform:none; }
     }
 
-    .modal h3,
-    .slots-modal h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+    .modal h3, .slots-modal h3 { font-size:16px; font-weight:700; margin-bottom:20px; }
 
-    .form-group {
-      margin-bottom: 16px;
-    }
+    .form-group { margin-bottom:16px; }
 
     .form-group label {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
+      display:block; font-size:12px; color:var(--muted);
+      margin-bottom:6px; text-transform:uppercase;
+      letter-spacing:0.5px; font-weight:600;
     }
 
     .form-group input,
     .form-group select {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--surface);
-      outline: none;
-      transition: border-color 0.15s;
+      width:100%; padding:10px 12px;
+      border:1px solid var(--border); border-radius:8px;
+      font-size:14px; font-family:'Inter', sans-serif;
+      color:var(--text); background:var(--surface);
+      outline:none; transition:border-color 0.15s;
     }
 
     .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--accent);
-    }
+    .form-group select:focus { border-color:var(--accent); }
 
     .form-group input[type="number"] {
-      font-size: 18px;
-      font-weight: 700;
-      text-align: center;
-      padding: 12px;
+      font-size:18px; font-weight:700;
+      text-align:center; padding:12px;
     }
 
-    .modal-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
+    .modal-actions { display:flex; gap:10px; margin-top:20px; }
 
     button.btn-primary {
-      flex: 1;
-      padding: 12px;
-      background: var(--text);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.15s;
+      flex:1; padding:12px; background:var(--text); color:#fff;
+      border:none; border-radius:8px; font-weight:600; font-size:14px;
+      cursor:pointer; font-family:'Inter', sans-serif; transition:background 0.15s;
     }
 
-    button.btn-primary:hover {
-      background: #2d3450;
-    }
+    button.btn-primary:hover { background:#2d3450; }
 
     button.btn-cancel {
-      padding: 12px 18px;
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.15s;
+      padding:12px 18px; background:transparent; color:var(--muted);
+      border:1px solid var(--border); border-radius:8px;
+      font-weight:600; font-size:14px; cursor:pointer;
+      font-family:'Inter', sans-serif; transition:background 0.15s;
     }
 
-    button.btn-cancel:hover {
-      background: var(--bg);
-    }
+    button.btn-cancel:hover { background:var(--bg); }
 
-    /* Save Indicator */
+    /* Toast / Save Indicator */
     .save-indicator {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background: var(--accent-green);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 999;
+      position:fixed; top:16px; right:16px;
+      background:var(--accent-green); color:#fff;
+      padding:10px 18px; border-radius:20px;
+      font-size:12px; font-weight:600;
+      opacity:0; transition:opacity 0.3s;
+      z-index:999; max-width:320px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.15);
     }
 
-    .save-indicator.show {
-      opacity: 1;
-    }
+    .save-indicator.show  { opacity:1; }
+    .save-indicator.error { background:var(--accent-red); }
 
-    .save-indicator.error {
-      background: var(--accent-red);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .card-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .progress-bar-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .driver-slot {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .slot-name,
-      .slot-company,
-      .slot-truck,
-      .slot-status {
-        width: 100%;
-      }
-
-      .stats-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .stats-counters {
-        width: 100%;
-      }
-
-      .stats-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .stats-card-name,
-      .stats-card-div {
-        width: 100%;
-      }
+    @media (max-width:768px) {
+      .card-header, .progress-bar-top, .driver-slot,
+      .stats-header, .stats-card { flex-direction:column; align-items:flex-start; }
+      .slot-name, .slot-company, .slot-truck, .slot-status,
+      .stats-card-name, .stats-card-div { width:100%; }
+      .stats-counters { width:100%; }
     }
   </style>
 </head>
 <body>
+
 <div class="save-indicator" id="saveInd">✓ Saved</div>
 
 <header>
@@ -947,7 +502,7 @@
     <h1>Driver Recruitment Dashboard</h1>
     <p class="header-subtitle" id="weekRange">WEEK: Loading...</p>
     <div class="header-footer">
-      <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display:flex;align-items:center;gap:12px;">
         <button class="purge-btn" onclick="monthlyPurge()">🗑 Purge 30d+</button>
         <div class="live-clock" id="liveClock">--:-- CDT</div>
       </div>
@@ -955,10 +510,7 @@
   </div>
 </header>
 
-<!-- TABS -->
 <div class="tabs-wrap" id="tabsWrap"></div>
-
-<!-- DIVISION CARDS -->
 <div class="container" id="divCards"></div>
 
 <!-- STATISTICS PANEL -->
@@ -976,7 +528,7 @@
   </div>
   <div class="stats-body" id="statsBody"></div>
   <div class="stats-footer">
-    <button class="export-btn" onclick="exportToGoogleSheets()">📤 Export to Sheets</button>
+    <button class="export-btn" onclick="exportToGoogleSheets()">📤 Re-export to Sheets</button>
     <button class="clear-btn" onclick="clearAllStats()">🗑 Clear this week</button>
   </div>
 </div>
@@ -1041,11 +593,11 @@
     <h3>✏️ Edit Slots</h3>
     <form onsubmit="saveSlotsCount(); return false;">
       <div class="form-group">
-        <label style="text-align: center; color: var(--accent-blue);">🔵 OO</label>
+        <label style="text-align:center;color:var(--accent-blue);">🔵 OO</label>
         <input type="number" id="slotsOO" min="0" max="99" value="5">
       </div>
       <div class="form-group">
-        <label style="text-align: center; color: var(--accent-green);">🟢 CD</label>
+        <label style="text-align:center;color:var(--accent-green);">🟢 CD</label>
         <input type="number" id="slotsCD" min="0" max="99" value="5">
       </div>
       <div class="modal-actions">
@@ -1057,36 +609,37 @@
 </div>
 
 <script>
-const SUPABASE_URL = 'https://spmfgzvsdmbkrwjjhove.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_Id2cAFvp3qZ6vmEIlqfwJQ_M_t8k-3V';
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxouco-i6oxgGPXF6ImVQCwKfGZkox6Ux-hnAf6D-siY1yU-KLi0jSjW9Wc-dr3wfrQ/exec';
+// ── CONFIG ── update these two lines for a new Supabase project
+const SUPABASE_URL     = 'https://vbjduijcdvtvhfsplgvz.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_TN1LbrlevZZgctMIxAr0Hg__NobFrE8';
+const APPS_SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbxouco-i6oxgGPXF6ImVQCwKfGZkox6Ux-hnAf6D-siY1yU-KLi0jSjW9Wc-dr3wfrQ/exec';
 
 const STATUSES = [
-  {key:'preapproval', label:'Pre-Approval',      icon:'🔍'},
-  {key:'drugtest',    label:'Drug Test Pending',  icon:'🧪'},
-  {key:'onhold',      label:'On Hold',            icon:'⏸'},
-  {key:'ready',       label:'Ready to Go',        icon:'✅'},
-  {key:'ghosted',     label:'Ghosted',            icon:'👻'},
-  {key:'hired',       label:'Hired',              icon:'🏆'},
-  {key:'disqualified',label:'Disqualified',       icon:'🚫'},
+  {key:'preapproval',  label:'Pre-Approval',      icon:'🔍'},
+  {key:'drugtest',     label:'Drug Test Pending',  icon:'🧪'},
+  {key:'onhold',       label:'On Hold',            icon:'⏸'},
+  {key:'ready',        label:'Ready to Go',        icon:'✅'},
+  {key:'ghosted',      label:'Ghosted',            icon:'👻'},
+  {key:'hired',        label:'Hired',              icon:'🏆'},
+  {key:'disqualified', label:'Disqualified',       icon:'🚫'},
 ];
 
-const TERMINAL_STATUSES = ['hired', 'disqualified', 'ghosted'];
-const DIVISION_ORDER = ['reefer','walmart','amazon','portage','dryvan'];
+const TERMINAL_STATUSES = ['hired','disqualified','ghosted'];
+const DIVISION_ORDER    = ['reefer','walmart','amazon','portage','dryvan'];
 
 let divisions = [], drivers = [], activeTab = null, _currentDivId = null;
 
 // ── CLOCK ──
 function updateClock() {
-  const t = new Date().toLocaleTimeString('en-US', {timeZone:'America/Chicago', hour:'2-digit', minute:'2-digit', hour12:true});
+  const t = new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit',hour12:true});
   document.getElementById('liveClock').textContent = t + ' CDT';
 }
 
 function updateWeekRange() {
   const now = new Date(), day = now.getDay();
-  const mon = new Date(now); mon.setDate(now.getDate() - (day===0?6:day-1));
-  const fri = new Date(mon); fri.setDate(mon.getDate() + 4);
-  const fmt = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  const mon = new Date(now); mon.setDate(now.getDate()-(day===0?6:day-1));
+  const fri = new Date(mon); fri.setDate(mon.getDate()+4);
+  const fmt = d => d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
   document.getElementById('weekRange').textContent = `WEEK: ${fmt(mon)} – ${fmt(fri)}`;
 }
 
@@ -1110,18 +663,26 @@ async function supabaseFetch(method, table, query=null, body=null) {
   } catch(e) { console.error('Fetch error:', e); return null; }
 }
 
-// ── INDICATORS ──
-function saveIndicator() {
-  const i = document.getElementById('saveInd'); i.classList.add('show');
-  setTimeout(() => i.classList.remove('show'), 1500);
+// ── TOAST ──
+function showToast(msg, isError=false) {
+  const i = document.getElementById('saveInd');
+  i.textContent = msg;
+  i.classList.toggle('error', isError);
+  i.classList.add('show');
+  setTimeout(() => {
+    i.classList.remove('show');
+    setTimeout(() => { i.textContent = '✓ Saved'; i.classList.remove('error'); }, 400);
+  }, 3000);
 }
+
+function saveIndicator() { showToast('✓ Saved'); }
 
 // ── HELPERS ──
 function isOO(pos) { return pos && (pos.toLowerCase().includes('owner') || pos.toLowerCase().includes('lease')); }
 function isCD(pos) { return pos && pos.toLowerCase().includes('company'); }
 function posClass(pos) { return isOO(pos)?'oo':isCD(pos)?'cd':''; }
 function getDivisionTitle(id) { return divisions.find(d=>d.id===id)?.title || id; }
-function getDivisionIcon(id) { return divisions.find(d=>d.id===id)?.icon || ''; }
+function getDivisionIcon(id)  { return divisions.find(d=>d.id===id)?.icon  || ''; }
 
 function getWeekRange() {
   const now=new Date(), day=now.getDay();
@@ -1135,11 +696,11 @@ async function init() {
   updateClock(); updateWeekRange();
   setInterval(updateClock, 1000);
   const [divData, drvData] = await Promise.all([
-    supabaseFetch('GET', 'divisions'),
-    supabaseFetch('GET', 'drivers')
+    supabaseFetch('GET','divisions'),
+    supabaseFetch('GET','drivers')
   ]);
   divisions = divData || [];
-  drivers = drvData || [];
+  drivers   = drvData || [];
   buildTabs();
   render();
   renderStats();
@@ -1149,10 +710,10 @@ async function init() {
 function buildTabs() {
   const container = document.getElementById('tabsWrap');
   container.innerHTML = '';
-  const ordered = DIVISION_ORDER.map(id => divisions.find(d=>d.id===id)).filter(Boolean);
+  const ordered = DIVISION_ORDER.map(id=>divisions.find(d=>d.id===id)).filter(Boolean);
   ordered.forEach((div, i) => {
     const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+    btn.className = 'tab-btn' + (i===0?' active':'');
     btn.id = `tab-${div.id}`;
     btn.textContent = `${div.icon} ${div.title}`;
     btn.onclick = () => switchTab(div.id);
@@ -1169,12 +730,12 @@ function buildTabs() {
 
 function switchTab(tabId) {
   activeTab = tabId;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  const activeBtn = tabId === 'stats' ? document.getElementById('stats-tab') : document.getElementById(`tab-${tabId}`);
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const activeBtn = tabId==='stats' ? document.getElementById('stats-tab') : document.getElementById(`tab-${tabId}`);
   if (activeBtn) activeBtn.classList.add('active');
-  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
   document.getElementById('statsPanel').classList.remove('active');
-  if (tabId === 'stats') {
+  if (tabId==='stats') {
     document.getElementById('statsPanel').classList.add('active');
   } else {
     const card = document.getElementById(`div-${tabId}`);
@@ -1186,17 +747,17 @@ function switchTab(tabId) {
 function render() {
   const container = document.getElementById('divCards');
   container.innerHTML = '';
-  const ordered = DIVISION_ORDER.map(id => divisions.find(d=>d.id===id)).filter(Boolean);
+  const ordered = DIVISION_ORDER.map(id=>divisions.find(d=>d.id===id)).filter(Boolean);
 
   ordered.forEach(div => {
-    const divDrivers = drivers.filter(d => d.division_id===div.id && !TERMINAL_STATUSES.includes(d.status));
-    const totalOO = div.slots_oo||0, totalCD = div.slots_cd||0, total = totalOO+totalCD;
+    const divDrivers = drivers.filter(d=>d.division_id===div.id && !TERMINAL_STATUSES.includes(d.status));
+    const totalOO  = div.slots_oo||0, totalCD = div.slots_cd||0, total = totalOO+totalCD;
     const coveredOO = divDrivers.filter(d=>isOO(d.position)).length;
     const coveredCD = divDrivers.filter(d=>isCD(d.position)).length;
-    const covered = divDrivers.length;
-    const pct = total>0 ? Math.min(100,Math.round((covered/total)*100)) : 0;
-    const emptyOO = Math.max(0, totalOO-coveredOO);
-    const emptyCD = Math.max(0, totalCD-coveredCD);
+    const covered   = divDrivers.length;
+    const pct       = total>0 ? Math.min(100,Math.round((covered/total)*100)) : 0;
+    const emptyOO   = Math.max(0, totalOO-coveredOO);
+    const emptyCD   = Math.max(0, totalCD-coveredCD);
 
     const card = document.createElement('div');
     card.className = 'card' + (div.id===activeTab?' active':'');
@@ -1205,16 +766,14 @@ function render() {
     const dsl = div.div_status==='urgent'?'🚨 Urgent Hire':div.div_status==='full'?'🟢 Full':'🔴 Hiring';
     const dsc = div.div_status==='full'?'div-status-full':div.div_status==='urgent'?'div-status-urgent':'div-status-hiring';
 
-    const headerHTML = `
+    card.innerHTML = `
       <div class="card-header">
         <div class="card-header-left">
           <div class="card-icon">${div.icon}</div>
           <div class="card-title">${div.title}</div>
         </div>
         <div class="div-status ${dsc}" onclick="cycleDivStatus('${div.id}')">${dsl}</div>
-      </div>`;
-
-    const progressHTML = `
+      </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-top">
           <div class="progress-stats">
@@ -1222,9 +781,7 @@ function render() {
               <span class="stat-number">${covered}</span>
               <span class="stat-label">/ ${total} covered</span>
             </div>
-            <div class="stat-breakdown">
-              CD: <strong>${coveredCD}</strong> · OO: <strong>${coveredOO}</strong>
-            </div>
+            <div class="stat-breakdown">CD: <strong>${coveredCD}</strong> · OO: <strong>${coveredOO}</strong></div>
           </div>
           <div class="progress-bar-actions">
             <button class="action-btn" onclick="stampDate('${div.id}')">🕒 ${div.last_updated||'—'}</button>
@@ -1234,8 +791,6 @@ function render() {
         <div class="progress-percentage">${pct}%</div>
         <div class="progress-bar-track"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
       </div>`;
-
-    card.innerHTML = headerHTML + progressHTML;
 
     const slotsSection = document.createElement('div');
     slotsSection.className = 'slots-section';
@@ -1249,7 +804,7 @@ function render() {
 function makeSlotGroup(label, colorClass, drvs, emptyCount, divId, defaultPosition) {
   const wrap = document.createElement('div');
   wrap.className = 'slots-group';
-  
+
   const labelEl = document.createElement('div');
   labelEl.className = `slots-group-label ${colorClass}`;
   labelEl.textContent = label;
@@ -1266,7 +821,8 @@ function makeSlotGroup(label, colorClass, drvs, emptyCount, divId, defaultPositi
       <div class="slot-name" contenteditable="true" onblur="updateDriver('${drv.id}','name',this.innerText.trim())">${drv.name||''}</div>
       <div class="slot-position ${pc}">${drv.position||''}</div>
       <select class="slot-company" onchange="updateDriver('${drv.id}','company',this.value)">
-        ${['Sayram Express LLC','Sayram Logistics Co','Iconic Logistics LLC','Golden Mile LLC','Money Express INC'].map(c=>`<option ${drv.company===c?'selected':''}>${c}</option>`).join('')}
+        ${['Sayram Express LLC','Sayram Logistics Co','Iconic Logistics LLC','Golden Mile LLC','Money Express INC']
+          .map(c=>`<option ${drv.company===c?'selected':''}>${c}</option>`).join('')}
       </select>
       <input type="text" class="slot-truck" value="${drv.Truck||''}" placeholder="Truck" onchange="updateDriver('${drv.id}','Truck',this.value)">
       <select class="slot-status" onchange="setStatus('${drv.id}',this.value)">
@@ -1296,16 +852,16 @@ function renderStats() {
   document.getElementById('statsWeekLabel').textContent = wkLbl;
 
   const inWeek = d => { const t=new Date(d.created_at).getTime(); return t>=start&&t<=end; };
-  const hired    = drivers.filter(d=>d.status==='hired'        && inWeek(d));
-  const disq     = drivers.filter(d=>d.status==='disqualified' && inWeek(d));
-  const ghosted  = drivers.filter(d=>d.status==='ghosted'      && inWeek(d));
+  const hired   = drivers.filter(d=>d.status==='hired'        && inWeek(d));
+  const disq    = drivers.filter(d=>d.status==='disqualified' && inWeek(d));
+  const ghosted = drivers.filter(d=>d.status==='ghosted'      && inWeek(d));
 
   document.getElementById('hiredCount').textContent   = hired.length;
   document.getElementById('disqCount').textContent    = disq.length;
   document.getElementById('ghostedCount').textContent = ghosted.length;
 
   const body = document.getElementById('statsBody');
-  if (hired.length===0 && disq.length===0 && ghosted.length===0) {
+  if (!hired.length && !disq.length && !ghosted.length) {
     body.innerHTML = '<div class="stats-empty">No activity recorded this week yet 💪</div>';
     return;
   }
@@ -1313,12 +869,11 @@ function renderStats() {
   body.innerHTML = '';
 
   const makeSection = (items, type, labelHtml) => {
-    if (items.length===0) return;
+    if (!items.length) return;
     const lbl = document.createElement('div');
     lbl.className = `stats-section-label ${type}`;
     lbl.innerHTML = labelHtml + ` (${items.length})`;
     body.appendChild(lbl);
-
     items.forEach(d => {
       const dateStr = new Date(d.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric'});
       const card = document.createElement('div');
@@ -1330,15 +885,14 @@ function renderStats() {
         <div class="stats-card-meta">${d.position||''}${d.company?' · '+d.company:''}</div>
         <div class="stats-card-date">📅 ${dateStr}</div>
         <span class="stats-card-badge badge-${type==='disqualified'?'disq':type}">${badgeText}</span>
-        <button class="stats-card-delete" type="button" onclick="removeStatEntry('${d.id}')" style="margin-left: auto;">✕</button>`;
+        <button class="stats-card-delete" type="button" onclick="removeStatEntry('${d.id}')" style="margin-left:auto;background:none;border:none;cursor:pointer;color:var(--muted);font-size:12px;">✕</button>`;
       body.appendChild(card);
     });
   };
 
-  const sectionHtml = {hired: '🏆 Hired', disqualified: '🚫 Disqualified', ghosted: '👻 Ghosted'};
-  makeSection(hired,   'hired',        sectionHtml.hired);
-  makeSection(disq,    'disq',         sectionHtml.disqualified);
-  makeSection(ghosted, 'ghosted',      sectionHtml.ghosted);
+  makeSection(hired,   'hired',        '🏆 Hired');
+  makeSection(disq,    'disq',         '🚫 Disqualified');
+  makeSection(ghosted, 'ghosted',      '👻 Ghosted');
 }
 
 async function removeStatEntry(driverId) {
@@ -1351,9 +905,9 @@ async function removeStatEntry(driverId) {
 function clearAllStats() {
   if (!confirm('Clear all hired, disqualified and ghosted entries for this week?')) return;
   const {start,end} = getWeekRange();
-  const toDelete = drivers.filter(d => TERMINAL_STATUSES.includes(d.status) && new Date(d.created_at).getTime()>=start && new Date(d.created_at).getTime()<=end);
-  drivers = drivers.filter(d => !toDelete.find(x=>x.id===d.id));
-  toDelete.forEach(d => supabaseFetch('DELETE','drivers',{id:`eq.${d.id}`}));
+  const toDelete = drivers.filter(d=>TERMINAL_STATUSES.includes(d.status) && new Date(d.created_at).getTime()>=start && new Date(d.created_at).getTime()<=end);
+  drivers = drivers.filter(d=>!toDelete.find(x=>x.id===d.id));
+  toDelete.forEach(d=>supabaseFetch('DELETE','drivers',{id:`eq.${d.id}`}));
   renderStats();
   saveIndicator();
 }
@@ -1370,9 +924,11 @@ async function deleteDriver(driverId) {
   if (!confirm('Delete this driver?')) return;
   drivers = drivers.filter(d=>d.id!==driverId);
   await supabaseFetch('DELETE','drivers',{id:`eq.${driverId}`});
-  render(); saveIndicator();
+  render();
+  saveIndicator();
 }
 
+// ── SET STATUS — auto-exports on terminal status ──
 async function setStatus(driverId, newStatus) {
   const drv = drivers.find(d=>d.id===driverId);
   if (!drv) return;
@@ -1381,6 +937,7 @@ async function setStatus(driverId, newStatus) {
 
   if (TERMINAL_STATUSES.includes(newStatus)) {
     await stampDivDate(drv.division_id);
+    autoExportDriver(drv);   // 🔄 fires immediately in background
     render(); renderStats();
     switchTab('stats');
   } else {
@@ -1390,9 +947,35 @@ async function setStatus(driverId, newStatus) {
   saveIndicator();
 }
 
+// ── AUTO EXPORT ON TERMINAL STATUS ──
+async function autoExportDriver(drv) {
+  const row = {
+    name:     drv.name     || '',
+    company:  drv.company  || '',
+    position: drv.position || '',
+    division: getDivisionTitle(drv.division_id),
+    status:   drv.status,
+    notes:    drv.notes    || '',
+    date:     new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})
+  };
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: {'Content-Type':'text/plain'},
+      body:    JSON.stringify({type:'auto', rows:[row]})
+    });
+    const statusIcon = drv.status==='hired'?'🏆':drv.status==='ghosted'?'👻':'🚫';
+    showToast(`${statusIcon} ${drv.name} → sent to Sheets`);
+  } catch(e) {
+    showToast('❌ Auto-export failed', true);
+    console.error('Auto-export error:', e);
+  }
+}
+
+// ── DIV STATUS ──
 async function cycleDivStatus(divId) {
-  const div = divisions.find(d=>d.id===divId);
-  if (!div) return;
+  const div = divisions.find(d=>d.id===divId); if (!div) return;
   const list = ['hiring','urgent','full'];
   div.div_status = list[(list.indexOf(div.div_status)+1)%list.length];
   await supabaseFetch('PATCH','divisions',{id:`eq.${divId}`},{div_status:div.div_status});
@@ -1432,12 +1015,12 @@ async function saveSlotsCount() {
 // ── ADD DRIVER MODAL ──
 function openAddDriver(divId, presetPosition='') {
   _currentDivId = divId;
-  document.getElementById('inp_name').value='';
-  document.getElementById('inp_position').value=presetPosition||'';
-  document.getElementById('inp_company').value='';
-  document.getElementById('inp_truck').value='';
-  document.getElementById('inp_status').value='preapproval';
-  document.getElementById('inp_meta').value='';
+  document.getElementById('inp_name').value     = '';
+  document.getElementById('inp_position').value = presetPosition||'';
+  document.getElementById('inp_company').value  = '';
+  document.getElementById('inp_truck').value    = '';
+  document.getElementById('inp_status').value   = 'preapproval';
+  document.getElementById('inp_meta').value     = '';
   document.getElementById('modalOverlay').classList.add('open');
   setTimeout(()=>document.getElementById('inp_name').focus(),50);
 }
@@ -1445,63 +1028,72 @@ function openAddDriver(divId, presetPosition='') {
 function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
 
 async function saveModalEntry() {
-  const name=document.getElementById('inp_name').value.trim();
-  const position=document.getElementById('inp_position').value;
-  const company=document.getElementById('inp_company').value;
-  const truck=document.getElementById('inp_truck').value.trim();
-  const status=document.getElementById('inp_status').value;
-  const notes=document.getElementById('inp_meta').value.trim();
-  if (!name){alert('Please enter driver name');return;}
-  if (!position){alert('Please select position');return;}
-  if (!company){alert('Please select company');return;}
-  const newDriver={name,position,company,Truck:truck||null,status,notes:notes||null,division_id:_currentDivId};
-  const result=await supabaseFetch('POST','drivers',null,newDriver);
-  if (result&&result.length>0) {
-    drivers.push(result[0]); closeModal();
+  const name     = document.getElementById('inp_name').value.trim();
+  const position = document.getElementById('inp_position').value;
+  const company  = document.getElementById('inp_company').value;
+  const truck    = document.getElementById('inp_truck').value.trim();
+  const status   = document.getElementById('inp_status').value;
+  const notes    = document.getElementById('inp_meta').value.trim();
+  if (!name)     { alert('Please enter driver name'); return; }
+  if (!position) { alert('Please select position');   return; }
+  if (!company)  { alert('Please select company');    return; }
+  const newDriver = {name, position, company, Truck:truck||null, status, notes:notes||null, division_id:_currentDivId};
+  const result = await supabaseFetch('POST','drivers',null,newDriver);
+  if (result && result.length>0) {
+    drivers.push(result[0]);
+    closeModal();
     await stampDivDate(_currentDivId);
     render(); renderStats(); saveIndicator();
-  } else { alert('Failed to save driver. Check browser console.'); }
+  } else {
+    alert('Failed to save driver. Check browser console.');
+  }
 }
 
-// ── EXPORT ──
+// ── BULK RE-EXPORT (manual button) ──
 async function exportToGoogleSheets() {
-  const {start,end}=getWeekRange();
-  const inWeek=d=>{const t=new Date(d.created_at).getTime();return t>=start&&t<=end;};
-  const rows=[
-    ...drivers.filter(d=>d.status==='hired'&&inWeek(d)).map(d=>({...d,type:'hired'})),
-    ...drivers.filter(d=>d.status==='disqualified'&&inWeek(d)).map(d=>({...d,type:'disqualified'})),
+  const {start,end} = getWeekRange();
+  const inWeek = d => { const t=new Date(d.created_at).getTime(); return t>=start&&t<=end; };
+  const rows = [
+    ...drivers.filter(d=>d.status==='hired'        && inWeek(d)).map(d=>({...d,type:'hired'})),
+    ...drivers.filter(d=>d.status==='disqualified' && inWeek(d)).map(d=>({...d,type:'disqualified'})),
+    ...drivers.filter(d=>d.status==='ghosted'      && inWeek(d)).map(d=>({...d,type:'ghosted'})),
   ];
-  if (!rows.length){alert('No hired/disqualified data to export this week!');return;}
-  const btn=document.querySelector('.export-btn');
-  if(btn){btn.textContent='⏳ Exporting...';btn.disabled=true;}
+  if (!rows.length) { alert('No terminal-status data to re-export this week!'); return; }
+  const btn = document.querySelector('.export-btn');
+  if (btn) { btn.textContent='⏳ Exporting...'; btn.disabled=true; }
   try {
-    const exportRows=rows.map(d=>({name:d.name,company:d.company,position:d.position,division:getDivisionTitle(d.division_id),notes:d.notes||'',date:new Date(d.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}));
+    const exportRows = rows.map(d=>({
+      name:     d.name,
+      company:  d.company,
+      position: d.position,
+      division: getDivisionTitle(d.division_id),
+      status:   d.status,
+      notes:    d.notes||'',
+      date:     new Date(d.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})
+    }));
     await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({type:'mixed',rows:exportRows})});
-    if(btn){btn.textContent=`✅ Exported ${rows.length}!`;setTimeout(()=>{btn.textContent='📤 Export to Sheets';btn.disabled=false;},2500);}
+    if (btn) { btn.textContent=`✅ Re-exported ${rows.length}!`; setTimeout(()=>{btn.textContent='📤 Re-export to Sheets';btn.disabled=false;},2500); }
   } catch(e) {
-    if(btn){btn.textContent='❌ Failed';setTimeout(()=>{btn.textContent='📤 Export to Sheets';btn.disabled=false;},2500);}
+    if (btn) { btn.textContent='❌ Failed'; setTimeout(()=>{btn.textContent='📤 Re-export to Sheets';btn.disabled=false;},2500); }
   }
 }
 
 // ── MONTHLY PURGE ──
 async function monthlyPurge() {
-  const cutoff=new Date(); cutoff.setDate(cutoff.getDate()-30);
-  const toDelete=drivers.filter(d=>TERMINAL_STATUSES.includes(d.status)&&new Date(d.created_at)<cutoff);
-  if(!toDelete.length){alert('No records older than 30 days to purge.');return;}
-  if(!confirm(`Delete ${toDelete.length} record(s) older than 30 days?`))return;
-  drivers=drivers.filter(d=>!toDelete.find(x=>x.id===d.id));
+  const cutoff = new Date(); cutoff.setDate(cutoff.getDate()-30);
+  const toDelete = drivers.filter(d=>TERMINAL_STATUSES.includes(d.status) && new Date(d.created_at)<cutoff);
+  if (!toDelete.length) { alert('No records older than 30 days to purge.'); return; }
+  if (!confirm(`Delete ${toDelete.length} record(s) older than 30 days?`)) return;
+  drivers = drivers.filter(d=>!toDelete.find(x=>x.id===d.id));
   await supabaseFetch('DELETE','drivers',{'created_at':`lt.${cutoff.toISOString()}`,'status':`in.(${TERMINAL_STATUSES.join(',')})`});
   render(); renderStats(); saveIndicator();
 }
 
 // ── EVENTS ──
-document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.getElementById('modalOverlay').addEventListener('click',     function(e){if(e.target===this)closeModal();});
 document.getElementById('slotsModalOverlay').addEventListener('click',function(e){if(e.target===this)closeSlotsModal();});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeModal();closeSlotsModal();}
-});
+document.addEventListener('keydown', e => { if(e.key==='Escape'){closeModal();closeSlotsModal();} });
 
-// ── INIT ──
 document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
