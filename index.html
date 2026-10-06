@@ -7,15 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4f6fa;
-      --surface: #fff;
-      --border: #e0e4ef;
-      --accent: #c49a0a;
-      --accent-blue: #1a8fe0;
-      --accent-green: #1aaa6a;
-      --accent-red: #e03e3e;
-      --text: #1a1e2e;
-      --muted: #8892a4;
+      --bg: #f0f7f6;
+      --surface: #ffffff;
+      --border: #BCDDDC;
+      --accent: #B89D47;
+      --accent-blue: #72B0AB;
+      --accent-green: #355E58;
+      --accent-red: #FE9179;
+      --text: #053229;
+      --muted: #CFB97E;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -83,32 +83,66 @@
 
     button.purge-btn:hover { background: var(--accent-red); color: #fff; }
 
+    /* Chrome-style tabs */
     .tabs-wrap {
       max-width: 1400px;
-      margin: 0 auto 20px;
+      margin: 0 auto 0;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      align-items: flex-end;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 14px 0 0;
+      scrollbar-width: none;
+      position: relative;
+      z-index: 2;
       border-bottom: 1px solid var(--border);
     }
 
+    .tabs-wrap::-webkit-scrollbar { display: none; }
+
     .tab-btn {
-      font-size: 14px;
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
       font-weight: 600;
-      padding: 12px 16px;
+      padding: 9px 22px 10px 18px;
       cursor: pointer;
-      border: none;
-      background: none;
+      border: 1px solid transparent;
+      border-bottom: none;
+      background: #cde3e1;
       color: var(--muted);
-      border-bottom: 2px solid transparent;
-      transition: all 0.15s;
       white-space: nowrap;
+      min-width: 90px;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+      border-radius: 10px 10px 0 0;
+      margin-right: 2px;
+      /* Chrome tab slanted sides */
+      clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 100%, 0% 100%);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.2px;
     }
 
-    .tab-btn:hover { color: var(--text); }
-    .tab-btn.active { border-bottom-color: var(--accent-blue); color: var(--text); }
+    .tab-btn:hover {
+      background: #bcd8d6;
+      color: var(--text);
+    }
 
-    .container { max-width: 1400px; margin: 0 auto; }
+    .tab-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      z-index: 3;
+      margin-bottom: -1px;
+      border-color: var(--border);
+      box-shadow: -2px -3px 6px rgba(0,0,0,0.06), 2px -3px 6px rgba(0,0,0,0.04);
+    }
+
+    #stats-tab { background: #c8ddd6; }
+    #stats-tab:hover { background: #b8cfc8; }
+    #stats-tab.active { background: var(--surface); }
+
+    .container { max-width: 1400px; margin: 20px auto 0; }
 
     .card {
       background: var(--surface);
@@ -127,7 +161,7 @@
       gap: 12px;
       padding: 24px;
       border-bottom: 1px solid var(--border);
-      background: #f8f9fd;
+      background: #e4f0ef;
       justify-content: space-between;
       flex-wrap: wrap;
     }
@@ -157,7 +191,7 @@
     .progress-bar-wrap {
       padding: 24px;
       border-bottom: 1px solid var(--border);
-      background: #fafbfe;
+      background: #f0f7f6;
     }
 
     .progress-bar-top {
@@ -201,7 +235,7 @@
       margin-bottom: 8px;
     }
 
-    .progress-bar-track { height: 8px; background: #e8edf5; border-radius: 99px; overflow: hidden; }
+    .progress-bar-track { height: 8px; background: #BCDDDC; border-radius: 99px; overflow: hidden; }
     .progress-bar-fill {
       height: 100%;
       background: var(--accent-blue);
@@ -267,6 +301,13 @@
       padding:4px 8px;
     }
 
+    .slot-phone {
+      font-size:12px; color:var(--muted);
+      width:130px; flex-shrink:0;
+      border:none; background:transparent;
+      padding:4px 8px;
+    }
+
     .slot-status {
       font-size:12px; font-weight:600; width:160px; flex-shrink:0;
       border:none; background:transparent; cursor:pointer;
@@ -309,7 +350,7 @@
     .stats-panel.active { display:block; }
 
     .stats-header {
-      padding:24px; background:#f8f9fd;
+      padding:24px; background:#e4f0ef;
       border-bottom:1px solid var(--border);
       display:flex; align-items:center;
       justify-content:space-between; gap:16px; flex-wrap:wrap;
@@ -325,9 +366,9 @@
       padding:6px 12px; border-radius:20px;
     }
 
-    .counter-hired   { background:#f0fdf6; color:var(--accent-green); border:1px solid rgba(26,170,106,0.2); }
-    .counter-disq    { background:#fff5f5; color:var(--accent-red);   border:1px solid rgba(224,62,62,0.2); }
-    .counter-ghosted { background:#f3f4f6; color:#6b7280;             border:1px solid rgba(107,114,128,0.2); }
+    .counter-hired   { background:#e8f2f0; color:var(--accent-green); border:1px solid rgba(53,94,88,0.2); }
+    .counter-disq    { background:#fff0ec; color:var(--accent-red);   border:1px solid rgba(254,145,121,0.3); }
+    .counter-ghosted { background:#f5f0e4; color:#B89D47;             border:1px solid rgba(184,157,71,0.25); }
 
     .stats-body { padding:24px; }
     .stats-section { margin-bottom:24px; }
@@ -341,7 +382,7 @@
 
     .stats-section-label.hired   { color: var(--accent-green); }
     .stats-section-label.disq    { color: var(--accent-red); }
-    .stats-section-label.ghosted { color: #6b7280; }
+    .stats-section-label.ghosted { color: #B89D47; }
 
     .stats-card {
       padding:12px; display:flex; align-items:center;
@@ -349,15 +390,15 @@
       flex-wrap:wrap; animation:slotIn 0.2s ease;
     }
 
-    .stats-card-hired   { background:#f0fdf6; border:1px solid rgba(26,170,106,0.15); }
-    .stats-card-disq    { background:#fff5f5; border:1px solid rgba(224,62,62,0.15); }
-    .stats-card-ghosted { background:#f3f4f6; border:1px solid rgba(107,114,128,0.15); }
+    .stats-card-hired   { background:#e8f2f0; border:1px solid rgba(53,94,88,0.15); }
+    .stats-card-disq    { background:#fff0ec; border:1px solid rgba(254,145,121,0.2); }
+    .stats-card-ghosted { background:#f5f0e4; border:1px solid rgba(184,157,71,0.2); }
 
     .stats-card-name { font-weight:600; font-size:13px; color:var(--text); width:120px; flex-shrink:0; }
     .stats-card-div  { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; width:80px; flex-shrink:0; }
     .stats-card-div-hired   { color: var(--accent-green); }
     .stats-card-div-disq    { color: var(--accent-red); }
-    .stats-card-div-ghosted { color: #6b7280; }
+    .stats-card-div-ghosted { color: #B89D47; }
     .stats-card-meta { font-size:12px; color:var(--muted); flex:1; min-width:100px; }
     .stats-card-date { font-size:11px; color:var(--muted); font-style:italic; white-space:nowrap; }
 
@@ -366,9 +407,9 @@
       padding:3px 8px; border-radius:10px; white-space:nowrap;
     }
 
-    .badge-hired   { background:rgba(26,170,106,0.12); color:var(--accent-green); }
-    .badge-disq    { background:rgba(224,62,62,0.12);  color:var(--accent-red); }
-    .badge-ghosted { background:rgba(107,114,128,0.12); color:#6b7280; }
+    .badge-hired   { background:rgba(53,94,88,0.12);    color:var(--accent-green); }
+    .badge-disq    { background:rgba(254,145,121,0.15); color:var(--accent-red); }
+    .badge-ghosted { background:rgba(184,157,71,0.15);  color:#B89D47; }
 
     .stats-empty { text-align:center; color:var(--muted); font-size:14px; padding:48px 0; }
 
@@ -459,7 +500,7 @@
       cursor:pointer; font-family:'Inter', sans-serif; transition:background 0.15s;
     }
 
-    button.btn-primary:hover { background:#2d3450; }
+    button.btn-primary:hover { background:#053229; }
 
     button.btn-cancel {
       padding:12px 18px; background:transparent; color:var(--muted);
@@ -487,7 +528,7 @@
     @media (max-width:768px) {
       .card-header, .progress-bar-top, .driver-slot,
       .stats-header, .stats-card { flex-direction:column; align-items:flex-start; }
-      .slot-name, .slot-company, .slot-truck, .slot-status,
+      .slot-name, .slot-company, .slot-truck, .slot-phone, .slot-status,
       .stats-card-name, .stats-card-div { width:100%; }
       .stats-counters { width:100%; }
     }
@@ -543,6 +584,10 @@
         <input id="inp_name" placeholder="e.g. John Smith">
       </div>
       <div class="form-group">
+        <label>Phone</label>
+        <input id="inp_phone" type="tel" placeholder="e.g. (555) 123-4567">
+      </div>
+      <div class="form-group">
         <label>Position</label>
         <select id="inp_position">
           <option value="">— Select Position —</option>
@@ -570,14 +615,14 @@
         <label>Status</label>
         <select id="inp_status">
           <option value="preapproval">🔍 Pre-Approval</option>
-          <option value="drugtest">🧪 Drug Test</option>
+          <option value="drugtest">🧪 Drug Test Pending</option>
           <option value="onhold">⏸ On Hold</option>
           <option value="ready">✅ Ready to Go</option>
         </select>
       </div>
       <div class="form-group">
         <label>Notes</label>
-        <input id="inp_meta" placeholder="e.g. Drug test ">
+        <input id="inp_meta" placeholder="e.g. Drug test pending">
       </div>
       <div class="modal-actions">
         <button class="btn-cancel" type="button" onclick="closeModal()">Cancel</button>
@@ -610,13 +655,13 @@
 
 <script>
 // ── CONFIG ── update these two lines for a new Supabase project
-const SUPABASE_URL     = 'https://spmfgzvsdmbkrwjjhove.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNwbWZnenZzZG1ia3J3ampob3ZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNTQyOTgsImV4cCI6MjA4ODgzMDI5OH0.1Uzsp9FEay4xFv6kEChtQtJYpFkZacGH_jYpKCCCMUE';
+const SUPABASE_URL     = 'https://vbjduijcdvtvhfsplgvz.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_TN1LbrlevZZgctMIxAr0Hg__NobFrE8';
 const APPS_SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbxouco-i6oxgGPXF6ImVQCwKfGZkox6Ux-hnAf6D-siY1yU-KLi0jSjW9Wc-dr3wfrQ/exec';
 
 const STATUSES = [
   {key:'preapproval',  label:'Pre-Approval',      icon:'🔍'},
-  {key:'drugtest',     label:'Drug Test',  icon:'🧪'},
+  {key:'drugtest',     label:'Drug Test Pending',  icon:'🧪'},
   {key:'onhold',       label:'On Hold',            icon:'⏸'},
   {key:'ready',        label:'Ready to Go',        icon:'✅'},
   {key:'ghosted',      label:'Ghosted',            icon:'👻'},
@@ -695,24 +740,17 @@ function getWeekRange() {
 async function init() {
   updateClock(); updateWeekRange();
   setInterval(updateClock, 1000);
-
   const [divData, drvData] = await Promise.all([
-    supabaseFetch('GET', 'divisions'),
-    supabaseFetch('GET', 'drivers')
+    supabaseFetch('GET','divisions'),
+    supabaseFetch('GET','drivers')
   ]);
-
-  // Guard against empty response wiping the UI
-  if (!divData && !drvData) {
-    showToast('❌ Could not reach database — check connection', true);
-    return; // don't wipe existing state
-  }
-
   divisions = divData || [];
   drivers   = drvData || [];
   buildTabs();
   render();
   renderStats();
 }
+
 // ── TABS ──
 function buildTabs() {
   const container = document.getElementById('tabsWrap');
@@ -832,6 +870,7 @@ function makeSlotGroup(label, colorClass, drvs, emptyCount, divId, defaultPositi
           .map(c=>`<option ${drv.company===c?'selected':''}>${c}</option>`).join('')}
       </select>
       <input type="text" class="slot-truck" value="${drv.Truck||''}" placeholder="Truck" onchange="updateDriver('${drv.id}','Truck',this.value)">
+      <input type="tel" class="slot-phone" value="${drv.phone||''}" placeholder="📞 Phone" onchange="updateDriver('${drv.id}','phone',this.value)">
       <select class="slot-status" onchange="setStatus('${drv.id}',this.value)">
         ${STATUSES.map(s=>`<option value="${s.key}" ${drv.status===s.key?'selected':''}>${s.icon} ${s.label}</option>`).join('')}
       </select>
@@ -937,47 +976,28 @@ async function deleteDriver(driverId) {
 
 // ── SET STATUS — auto-exports on terminal status ──
 async function setStatus(driverId, newStatus) {
-  const drv = drivers.find(d => d.id === driverId);
+  const drv = drivers.find(d=>d.id===driverId);
   if (!drv) return;
+  drv.status = newStatus;
+  await supabaseFetch('PATCH','drivers',{id:`eq.${driverId}`},{status:newStatus});
 
-  const previousStatus = drv.status; // save rollback point
-
-  try {
-    drv.status = newStatus;
-    const result = await supabaseFetch('PATCH', 'drivers', {id: `eq.${driverId}`}, {status: newStatus});
-
-    if (result === null) {
-      // Supabase call failed — roll back local state
-      drv.status = previousStatus;
-      showToast('❌ Failed to update status — rolled back', true);
-      render();
-      return;
-    }
-
-    if (TERMINAL_STATUSES.includes(newStatus)) {
-      await stampDivDate(drv.division_id);
-      autoExportDriver(drv); // fire and forget — won't block render
-      render(); renderStats();
-      switchTab('stats');
-    } else {
-      await stampDivDate(drv.division_id);
-      render();
-    }
-    saveIndicator();
-
-  } catch (e) {
-    // Full rollback on any unexpected error
-    drv.status = previousStatus;
-    showToast('❌ Error updating status — rolled back', true);
-    console.error('setStatus error:', e);
+  if (TERMINAL_STATUSES.includes(newStatus)) {
+    await stampDivDate(drv.division_id);
+    autoExportDriver(drv);   // 🔄 fires immediately in background
+    render(); renderStats();
+    switchTab('stats');
+  } else {
+    await stampDivDate(drv.division_id);
     render();
   }
+  saveIndicator();
 }
 
 // ── AUTO EXPORT ON TERMINAL STATUS ──
 async function autoExportDriver(drv) {
   const row = {
     name:     drv.name     || '',
+    phone:    drv.phone    || '',
     company:  drv.company  || '',
     position: drv.position || '',
     division: getDivisionTitle(drv.division_id),
@@ -1048,6 +1068,7 @@ function openAddDriver(divId, presetPosition='') {
   document.getElementById('inp_truck').value    = '';
   document.getElementById('inp_status').value   = 'preapproval';
   document.getElementById('inp_meta').value     = '';
+  document.getElementById('inp_phone').value   = '';
   document.getElementById('modalOverlay').classList.add('open');
   setTimeout(()=>document.getElementById('inp_name').focus(),50);
 }
@@ -1061,10 +1082,11 @@ async function saveModalEntry() {
   const truck    = document.getElementById('inp_truck').value.trim();
   const status   = document.getElementById('inp_status').value;
   const notes    = document.getElementById('inp_meta').value.trim();
+  const phone    = document.getElementById('inp_phone').value.trim();
   if (!name)     { alert('Please enter driver name'); return; }
   if (!position) { alert('Please select position');   return; }
   if (!company)  { alert('Please select company');    return; }
-  const newDriver = {name, position, company, Truck:truck||null, status, notes:notes||null, division_id:_currentDivId};
+  const newDriver = {name, position, company, Truck:truck||null, status, notes:notes||null, phone:phone||null, division_id:_currentDivId};
   const result = await supabaseFetch('POST','drivers',null,newDriver);
   if (result && result.length>0) {
     drivers.push(result[0]);
@@ -1091,6 +1113,7 @@ async function exportToGoogleSheets() {
   try {
     const exportRows = rows.map(d=>({
       name:     d.name,
+      phone:    d.phone    || '',
       company:  d.company,
       position: d.position,
       division: getDivisionTitle(d.division_id),
